@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_texture.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:12:44 by jde-carv          #+#    #+#             */
+/*   Updated: 2026/06/09 20:44:34 by jde-carv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "parsing.h"
 
 static int	check_tex_extension(char *path)
@@ -27,7 +39,7 @@ static int	validate_tex_path(char *path)
 	return (0);
 }
 
-static char	*extract_path(char *line)
+char	*extract_path(char *line)
 {
 	char	*start;
 	char	*end;

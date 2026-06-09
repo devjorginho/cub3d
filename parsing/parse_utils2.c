@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_utils2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:12:44 by jde-carv          #+#    #+#             */
+/*   Updated: 2026/06/09 20:42:01 by jde-carv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "parsing.h"
 #include <stdio.h>
 
@@ -47,9 +59,8 @@ int	is_map_line(char *line)
 	i = 0;
 	while (line[i] && line[i] != '\n')
 	{
-		if (line[i] != '0' && line[i] != '1' && line[i] != ' '
-			&& line[i] != 'N' && line[i] != 'S'
-			&& line[i] != 'E' && line[i] != 'W')
+		if (line[i] != '0' && line[i] != '1' && line[i] != ' ' && line[i] != 'N'
+			&& line[i] != 'S' && line[i] != 'E' && line[i] != 'W')
 			return (0);
 		i++;
 	}
@@ -58,7 +69,7 @@ int	is_map_line(char *line)
 
 void	free_parse_data(t_parse_data *data)
 {
-	//int	i;
+	// int	i;
 	printf("->FREE %p\n", data);
 	if (data->tex_no)
 		free(data->tex_no);
@@ -68,5 +79,4 @@ void	free_parse_data(t_parse_data *data)
 		free(data->tex_we);
 	if (data->tex_ea)
 		free(data->tex_ea);
-
 }

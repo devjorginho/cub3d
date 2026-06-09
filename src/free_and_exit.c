@@ -13,12 +13,12 @@
 #include <cub3d.h>
 #include <stdio.h>
 
-void free_game_map(t_map *map)
+void	free_game_map(t_map *map)
 {
-	int i;
+	int	i;
 
 	if (!map || !map->arr)
-		return;
+		return ;
 	i = 0;
 	while (i < map->h)
 	{
@@ -30,18 +30,17 @@ void free_game_map(t_map *map)
 	map->w = 0;
 	map->h = 0;
 }
-void free_image(void *mlx, t_image_data *img)
+void	free_image(void *mlx, t_image_data *img)
 {
 	if (!img || !img->ptr)
-		return;
-
+		return ;
 	mlx_destroy_image(mlx, img->ptr);
 	img->ptr = NULL;
 	img->buffer = NULL;
 }
-void free_walls(t_game *g)
+void	free_walls(t_game *g)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 4)
@@ -51,17 +50,16 @@ void free_walls(t_game *g)
 	}
 }
 
-void free_images(t_game *g)
+void	free_images(t_game *g)
 {
 	free_image(g->mlx.mlx, &g->images.font_tileset);
 	free_image(g->mlx.mlx, &g->images.crosshair);
-    free_image(g->mlx.mlx, &g->frame);
+	free_image(g->mlx.mlx, &g->frame);
 }
 
-
-void free_dict(t_dict *dict)
+void	free_dict(t_dict *dict)
 {
-	t_dict *tmp;
+	t_dict	*tmp;
 
 	while (dict)
 	{
@@ -84,11 +82,10 @@ void	free_texture_paths(t_parse_data *data)
 	if (data->tex_ea)
 		free(data->tex_ea);
 }
-void cleanup(t_game *g)
+void	cleanup(t_game *g)
 {
 	if (!g)
-		return;
-
+		return ;
 	free_game_map(&g->map);
 	free_walls(g);
 	free_images(g);
@@ -102,9 +99,9 @@ void cleanup(t_game *g)
 	}
 }
 
-int exit_game(t_game *g)
+int	exit_game(t_game *g)
 {
 	cleanup(g);
 	exit(0);
-	return 0;
+	return (0);
 }

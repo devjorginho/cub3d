@@ -1,26 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:12:44 by jde-carv          #+#    #+#             */
+/*   Updated: 2026/06/09 20:41:53 by jde-carv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "parsing.h"
 
-static const char	*g_err_msgs[E_COUNT] = {
-	"Error\nUsage: ./cub3d <map.cub>\n",
-	"Error\nFile must have .cub extension\n",
-	"Error\nCannot open file\n",
-	"Error\nFile is empty\n",
-	"Error\nInvalid texture format\n",
-	"Error\nCannot open texture file\n",
-	"Error\nDuplicate texture definition\n",
-	"Error\nMissing texture definition\n",
-	"Error\nInvalid color format\n",
-	"Error\nDuplicate color definition\n",
-	"Error\nInvalid character in map\n",
-	"Error\nMap must have exactly one player\n",
-	"Error\nMap is not surrounded by walls\n",
-	"Error\nNo map found in file\n",
-	"Error\nMap must be last element in file\n",
-	"Error\nTabs are not allowed\n",
-	"Error\nInvalid element in file\n",
-	"Error\nMemory allocation failed\n",
-	"Error\nUnable to init MLX\n"
-};
+static const char	*g_err_msgs[E_COUNT] = {"Error\nUsage: ./cub3d <map.cub>\n",
+		"Error\nFile must have .cub extension\n", "Error\nCannot open file\n",
+		"Error\nFile is empty\n", "Error\nInvalid texture format\n",
+		"Error\nCannot open texture file\n",
+		"Error\nDuplicate texture definition\n",
+		"Error\nMissing texture definition\n", "Error\nInvalid color format\n",
+		"Error\nDuplicate color definition\n",
+		"Error\nInvalid character in map\n",
+		"Error\nMap must have exactly one player\n",
+		"Error\nMap is not surrounded by walls\n",
+		"Error\nNo map found in file\n",
+		"Error\nMap must be last element in file\n",
+		"Error\nTabs are not allowed\n", "Error\nInvalid element in file\n",
+		"Error\nMemory allocation failed\n", "Error\nUnable to init MLX\n"};
 
 int	flags_all_set(t_flags *f)
 {
